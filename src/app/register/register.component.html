@@ -1,0 +1,23 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2>Register</h2>
+  <form #registerForm="ngForm"  (ngSubmit)="onSubmit()">
+    <label for="fullname">Name</label>
+    <input id="fullname" type="text" class="form-control" name="fullname" [(ngModel)]="model.fullname" #fullname="ngModel" required minlength="4" maxlength="24" />
+    <div *ngIf="formErrors.fullname" class="alert alert-danger">
+      {{ formErrors.fullname }}
+    </div>
+    <label for="emailaddress">Eamil</label>
+    <input id="emailaddress" type="email" class="form-control" name="emailaddress" [(ngModel)]="model.emailaddress" #emailaddress="ngModel" required  ng-pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"/>
+    <div *ngIf="formErrors.emailaddress" class="alert alert-danger">
+      {{ formErrors.emailaddress }}
+    </div>
+
+    <label for="password">password</label>
+    <input id="password" type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+
+    <div class="form-row">
+      <button type="submit">Save</button>
+    </div>
+
+  </form>
+</div>

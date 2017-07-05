@@ -1,0 +1,13 @@
+<div style="text-align:center">
+  <nav>
+    <ul>
+      <li><a routerLink="/home">Home</a> </li>
+      <li><a routerLink="/user">Users</a> </li>
+      <li><a routerLink="/posts">Posts</a> </li>
+      <li *ngIf="showLogin"><a routerLink="/login">Login</a> </li>
+      <li *ngIf="showLogout"><a routerLink="/logout">Logout</a> </li>
+     <!-- <button (click)="authenticateService.logout()" *ngIf="showLogout">Logout</button>-->
+    </ul>
+  </nav>
+
+</div>
